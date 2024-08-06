@@ -6,7 +6,7 @@
     <!-- 콘솔 로그 패턴 정의 -->
     <property name="CONSOLE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %magenta([%thread]) %highlight([%-3level]) %logger{5} \( line:%line \) - %msg %n"/>
     <!-- 파일 로그 패턴 정의 -->
-    <property name="ROLLING_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS}  %logger{5} \( line:$line \) - %msg %n" />
+    <property name="ROLLING_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS}  %logger{5} - %msg %n" />
     <property name="FILE_NAME" value="./logs/application.log" />
     <property name="LOG_NAME_PATTERN" value="./logs/application-%d{yyyy-MM-dd-HH-mm}.log" />
     <!-- 로그파일 최대 사이즈 -->
