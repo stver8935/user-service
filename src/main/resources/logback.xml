@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 해당 파일은 Logback 설정에 필요한 내용을 포함 하고 있음 -->
+<!-- appender, logger, root 구성 요소로 크게 구분된다. -->
+
+<configuration>
+    <!-- 콘솔 로그 패턴 정의 -->
+    <property name="CONSOLE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %magenta([%thread]) %highlight([%-3level]) %logger{5} \( line:%line \) - %msg %n"/>
+    <!-- 파일 로그 패턴 정의 -->
+    <property name="ROLLING_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS}  %logger{5} \( line:$line \) - %msg %n" />
+    <property name="FILE_NAME" value="./logs/application.log" />
+    <property name="LOG_NAME_PATTERN" value="./logs/application-%d{yyyy-MM-dd-HH-mm}.log" />
+    <!-- 로그파일 최대 사이즈 -->
+    <property name="MAX_FILE_SIZE" value="10MB" />
+    <!-- 로그파일 총 사이즈 -->
+    <property name="TOTAL_SIZE" value="30MB" />
+    <!-- 로그 파일 갯수 -->
+    <property name="MAX_HISTORY" value="3" />
+
+    <!-- 로그 콘솔 출력 설정 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 로그 파일 출력 설정 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${FILE_NAME}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_NAME_PATTERN}</fileNamePattern>
+            <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+            <totalSizeCap>${TOTAL_SIZE}</totalSizeCap>
+            <maxHistory>${MAX_HISTORY}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${ROLLING_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="com.stver8935.rest_api.controllers.ExampleController" level="DEBUG" additive="true" >
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
