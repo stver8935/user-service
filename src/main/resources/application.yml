@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: api
+  profiles:
+    active: dev
+  config:
+    import: configserver:http://master:1234@localhost:9000
+
+#logging:
+#  config: http://master:1234@localhost:9000/spring-logback-repo/logback.xml
+
