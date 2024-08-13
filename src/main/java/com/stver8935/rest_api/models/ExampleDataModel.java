@@ -1,17 +1,16 @@
 package com.stver8935.rest_api.models;
 
+import com.stver8935.rest_api.services.ExampleService;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
+@Getter
+@Setter
 public class ExampleDataModel {
 
     @Id
@@ -19,4 +18,26 @@ public class ExampleDataModel {
     private long id;
     private String text;
 
+    public ExampleDataModel(){}
+
+    public ExampleDataModel(long id, String text){
+        this.id = id;
+        this.text = text;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 }
