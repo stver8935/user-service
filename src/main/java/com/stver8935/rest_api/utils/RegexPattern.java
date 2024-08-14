@@ -1,4 +1,4 @@
-package com.stver8935.rest_api.components;
+package com.stver8935.rest_api.utils;
 
 /**
  * 정규식 채턴을 정의.
