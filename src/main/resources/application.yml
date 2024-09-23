@@ -1,11 +1,13 @@
 spring:
   application:
-    name: api
+    name: userService
   profiles:
     active: dev
   config:
     import: configserver:http://master:1234@localhost:9000
-
-#logging:
-#  config: http://master:1234@localhost:9000/spring-logback-repo/logback.xml
-
+  devtools:
+    restart:
+      enabled: true
+      additional-exclude: static
+    livereload:
+      enabled: true
