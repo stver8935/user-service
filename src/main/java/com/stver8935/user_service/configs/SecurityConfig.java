@@ -1,7 +1,6 @@
 package com.stver8935.user_service.configs;
 
 import com.stver8935.user_service.models.UserRole;
-import com.stver8935.rest_api.security.jwt.*;
 import com.stver8935.user_service.security.services.UserService;
 import com.stver8935.user_service.utils.ExceptionMessageAccessor;
 import com.stver8935.user_service.utils.GeneralMessageAccessor;
