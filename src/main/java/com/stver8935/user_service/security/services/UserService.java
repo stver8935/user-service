@@ -4,7 +4,6 @@ import com.stver8935.user_service.exceptions.RegistrationException;
 import com.stver8935.user_service.models.User;
 import com.stver8935.user_service.models.UserRole;
 import com.stver8935.user_service.repositories.UserRepository;
-import com.stver8935.rest_api.security.dto.*;
 import com.stver8935.user_service.security.dto.*;
 import com.stver8935.user_service.security.jwt.JwtTokenManager;
 import com.stver8935.user_service.security.mapper.UserMapper;
