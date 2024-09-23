@@ -16,17 +16,35 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "jwt")
 public class JwtProperties {
 
+    /**
+     * 토큰 발급자
+     */
     private String issuer;
 
-    private String secretKey;
+    /**
+     * refreshToken 서명을 위한 키값
+     */
+    private String refreshTokenSignKey;
+    /**
+     * refreshToken 암호화를 위한 키값
+     */
+    private String refreshTokenEncryptKey;
+    /**
+     * refreshToken 만료 시간
+     */
+    private long refreshTokenExpiredTimeMin;
 
-    private long expiredTime;
+    /**
+     * accessToken 서명을 위한 키값
+     */
+    private String accessTokenSignKey;
+    /**
+     * accessToken 암호화를 위한 키값
+     */
+    private String accessTokenEncryptKey;
 
-    private String refreshTokenSecretKey;
-
-    private long refreshTokenExpiredTime;
-
-    private String accessTokenSecretKey;
-
-    private long accessTokenExpiredTime;
+    /**
+     * accessToken 만료 시간
+     */
+    private long accessTokenExpiredTimeMin;
 }

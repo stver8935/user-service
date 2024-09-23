@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
  * @since           : 24. 8. 6.
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api2")
 @Slf4j
 public class ExampleController {
 
@@ -34,6 +34,7 @@ public class ExampleController {
             Pageable pageable,
             @RequestParam("category") int category,
             @RequestParam("searchWord") String searchWord){
+
         Page<ExampleDataModel> resp = exampleService.retrieveExampleData(searchWord,pageable);
         return new ResponseEntity<>(resp,HttpStatus.OK);
     }

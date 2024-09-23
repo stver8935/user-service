@@ -12,8 +12,8 @@ import java.util.Objects;
  * 일반 메시지 다국어 처리를 위한 클래스
  *
  * @author : hangihyeong
- * @packageName : com.stver8935.rest_api.utils
- * @fileName : GeneralMessageAccessor
+ * @ packageName : com.stver8935.rest_api.utils
+ * @ fileName : GeneralMessageAccessor
  * @since : 24. 8. 16.
  */
 @Service
@@ -21,7 +21,7 @@ public class GeneralMessageAccessor {
 
     private final MessageSource messageSource;
 
-    GeneralMessageAccessor(@Qualifier("") MessageSource messageSource){
+    GeneralMessageAccessor(@Qualifier("generalMessageSource") MessageSource messageSource){
         this.messageSource = messageSource;
     }
 

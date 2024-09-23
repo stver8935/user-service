@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 
 @Slf4j
 @Component
-public class Functions implements RegexPattern {
+public class Functions<T,A> implements RegexPattern {
 
     /**
      * 비속어 패턴 맵

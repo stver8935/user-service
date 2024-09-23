@@ -21,7 +21,7 @@ public interface RegexPattern {
     /**
      *  계정 이름 정규식 패턴
      */
-    public static final String NAME_REGEX = "^[가-힣\\A-Za-z]+$";
+    public static final String NAME_REGEX = "^[가-힣A-Za-z]+$";
     /**
      * 비속어 셋
      */

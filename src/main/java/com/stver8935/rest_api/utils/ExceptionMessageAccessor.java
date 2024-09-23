@@ -21,7 +21,7 @@ public class ExceptionMessageAccessor {
     private final MessageSource messageSource;
 
     ExceptionMessageAccessor(
-            // 예외 메시지 파일 명을 적어준다.
+            // 예외 메시지 Configuration에서 정의한 Bean의 명칭을 적어준다.
             @Qualifier("exceptionMessageSource") MessageSource messageSource){
         this.messageSource = messageSource;
     }
